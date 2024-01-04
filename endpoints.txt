@@ -1,0 +1,24 @@
+GET    video/ - список всех видео, которые публичные (AllowAny)
+POST   video/ - создание видео (title, description, videofile, preview) (IsAuthenticated)
+GET    video/<id>/ - информация о видео, которое публичное (AllowAny)
+PUT    video/<id>/ - полное изменение видео (title, description, videofile, preview) (isAuthor)
+PATCH  video/<id>/ - частичное изменение видео (title, description, videofile, preview) (isAuthor)
+DELETE video/<id>/ - удаление видео (isAuthor)
+
+GET    video/<id>/watch/ - просмотр видео. +1 к просмотру видео и добавление в watchedvideo (AllowAny)
+
+GET    genres/ - список жанров
+
+GET    comments-by-video/<id>/ - получение всех комментариев к видео (AllowAny)
+
+GET    comments/ - список всех комментариев юзера (IsAuthor)
+POST   comments/ - создание комментария (video, user, content) (IsAuthenticated)
+GET    comments/<id>/ - получение комментария юзера (IsAuthor)
+PUT    comments/<id>/ - полное изменение комментария юзера (IsAuthor)
+PATCH  comments/<id>/ - частичное изменение комментария юзера (IsAuthor)
+DELETE comments/<id>/ - удаление комментария юзера (IsAuthor)
+
+POST   rating/ - оценить видео. (video, user, rating). Если оценка есть, то ошибка? Если другой, то поменять. 
+						       (IsAuthenticated и тот, кто есть в watchedvideo)
+GET    rating/<user_id>/ - список оценок видео юзера. (IsAuthor)
+

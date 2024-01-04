@@ -1,0 +1,12 @@
+__pycache__
+
+db.sqlite3
+venv/
+media/
+
+.env
+
+celerybeat-schedule
+celerybeat.pid
+
+.vscode

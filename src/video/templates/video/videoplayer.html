@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео</title>
+</head>
+<body>
+    <video 
+        poster="{{ video_object.preview.url }}"
+        src="{% url 'video_watch' video_object.id %}"
+        controls="controls"
+        width="700"
+        height="400"
+        preload="auto"
+    >
+    <source src="{% url 'video_watch' video_object.id %}" type="video/mp4">
+    </video>
+</body>
+</html>
+
